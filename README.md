@@ -1,78 +1,260 @@
-# Leaf Disease Image Captioning ML
+# 🌿 Leaf Disease Image Captioning ML
 
-A machine learning project for classifying and captioning plant leaf diseases using image processing and deep learning models.
+An AI-powered Machine Learning project that analyzes plant leaf images and generates meaningful captions using Computer Vision, Deep Learning, and NLP techniques.
 
-## Project Structure
+The system processes uploaded leaf images, extracts visual patterns, and produces AI-generated descriptive outputs using transformer-based image captioning models.
 
+---
+
+# 🚀 Project Overview
+
+This project combines:
+- Image Processing
+- Deep Learning
+- Hugging Face Transformers
+- NLP Caption Generation
+- Flask Web Integration
+
+to create an intelligent plant image understanding system.
+
+---
+
+# 🧠 Workflow Architecture
+
+```text
+                    ┌──────────────┐
+                    │    START     │
+                    └──────┬───────┘
+                           ↓
+              ┌────────────────────────┐
+              │ Upload Leaf Image      │
+              └──────────┬─────────────┘
+                         ↓
+              ┌────────────────────────┐
+              │ Flask Receives Input   │
+              └──────────┬─────────────┘
+                         ↓
+              ┌────────────────────────┐
+              │ Image Preprocessing    │
+              │ RGB Conversion         │
+              └──────────┬─────────────┘
+                         ↓
+              ┌────────────────────────┐
+              │ Feature Extraction     │
+              │ ViTImageProcessor      │
+              └──────────┬─────────────┘
+                         ↓
+              ┌────────────────────────┐
+              │ Vision Transformer     │
+              │ Extracts Features      │
+              └──────────┬─────────────┘
+                         ↓
+              ┌────────────────────────┐
+              │ GPT-2 Decoder          │
+              │ Generates Caption      │
+              └──────────┬─────────────┘
+                         ↓
+              ┌────────────────────────┐
+              │ Caption Decoding       │
+              │ NLP Text Output        │
+              └──────────┬─────────────┘
+                         ↓
+              ┌────────────────────────┐
+              │ Display Caption        │
+              │ on Web Interface       │
+              └──────────┬─────────────┘
+                         ↓
+                    ┌──────────────┐
+                    │    FINISH    │
+                    └──────────────┘
 ```
-├── src/                    # Source code modules
+
+---
+
+# ⚙️ Real AI Pipeline
+
+```text
+Input Image
+     ↓
+Image Preprocessing
+     ↓
+Vision Transformer Encoder
+     ↓
+Feature Embeddings
+     ↓
+GPT-2 Language Decoder
+     ↓
+Generated Caption
+```
+
+---
+
+# 📂 Project Structure
+
+```bash
+Leaf-Disease-Image-Captioning_ML/
+│
+├── src/                    # Source Code
+├── static/
+│   └── uploaded_images/
+│
+├── templates/
+│   └── index.html
+│
 ├── data/
-│   ├── raw/               # Original, unprocessed data
-│   └── processed/         # Processed data for modeling
+│   ├── raw/
+│   └── processed/
+│
 ├── models/
-│   └── trained/           # Trained model checkpoints
-├── notebooks/             # Jupyter notebooks for exploration and experimentation
-├── config/                # Configuration files
-├── results/               # Output predictions and results
-├── tests/                 # Unit tests
-├── docs/                  # Documentation
-├── requirements.txt       # Project dependencies
-└── README.md             # This file
+│   └── trained/
+│
+├── notebooks/
+├── docs/
+├── tests/
+│
+├── app.py
+├── requirements.txt
+└── README.md
 ```
 
-## Installation
+---
 
-1. Create a virtual environment (if not already done):
+# 🔥 Features
+
+✅ AI-generated image captions  
+✅ Transformer-based deep learning workflow  
+✅ Flask web application  
+✅ Real-time image analysis  
+✅ NLP-based text generation  
+✅ Hugging Face Transformers integration  
+✅ VisionEncoderDecoder architecture  
+✅ GPU/CPU support with PyTorch  
+
+---
+
+# 🛠️ Technologies Used
+
+| Technology | Purpose |
+|------------|----------|
+| Python | Core Programming |
+| Flask | Backend Framework |
+| PyTorch | Deep Learning |
+| Transformers | AI Models |
+| ViT-GPT2 | Image Captioning |
+| PIL | Image Processing |
+| HTML/CSS | Frontend UI |
+
+---
+
+# 🤖 Model Used
+
+### Hugging Face Transformer Model
+```text
+nlpconnect/vit-gpt2-image-captioning
+```
+
+### Architecture
+- Vision Transformer (ViT)
+- GPT-2 Language Decoder
+- Encoder-Decoder Framework
+
+---
+
+# ⚡ Installation
+
+## Clone Repository
+
+```bash
+git clone https://github.com/Sabarisekaran/Leaf-Disease-Image-Captioning_ML.git
+```
+
+---
+
+## Create Virtual Environment
+
 ```bash
 python -m venv .venv
 ```
 
-2. Activate the virtual environment:
+---
+
+## Activate Environment
+
+### Windows
 ```bash
-# On Windows:
 .venv\Scripts\activate
-# On macOS/Linux:
+```
+
+### Linux/macOS
+```bash
 source .venv/bin/activate
 ```
 
-3. Install dependencies:
+---
+
+## Install Dependencies
+
 ```bash
 pip install -r requirements.txt
 ```
 
-## Usage
+---
 
-```python
-from src.predict import predict_caption
+# ▶️ Run Application
 
-image_paths = ["path/to/image1.jpg", "path/to/image2.jpg"]
-captions = predict_caption(image_paths)
-
-for i, caption in enumerate(captions):
-    print(f"Image {i+1}: {caption}")
+```bash
+python app.py
 ```
 
-## Model Information
+---
 
-- **Model Type**: Image Classification with Hugging Face Transformers
-- **Input**: Plant leaf images (RGB)
-- **Output**: Disease classification/caption
+# 🌐 Open in Browser
 
-## Contributing
+```text
+http://127.0.0.1:5000
+```
 
-Please follow these guidelines when contributing to this project:
-- Create feature branches for new work
-- Add tests for new functionality
-- Update documentation as needed
+---
 
-## License
+# 📸 How the System Works
 
-MIT License
+1️⃣ User uploads image  
+2️⃣ Flask receives image  
+3️⃣ Image converted to RGB  
+4️⃣ ViT extracts visual features  
+5️⃣ GPT-2 generates caption  
+6️⃣ NLP decoder converts tokens  
+7️⃣ Caption displayed on webpage  
 
-## Authors
+---
 
-- Your Name
+# 📚 Learning Outcomes
 
-## Contact
+Through this project, I learned:
+- Deep Learning workflows
+- Computer Vision pipelines
+- NLP caption generation
+- Transformer architectures
+- Flask backend integration
+- AI model inference process
 
-[Your contact information]
+---
+
+# 🚀 Future Improvements
+
+- Multi-language captions
+- Better disease-specific captions
+- Webcam live prediction
+- Voice-based caption output
+- Mobile responsive UI
+- Advanced deployment pipeline
+
+---
+
+# 👨‍💻 Author
+
+## Sabari Sekaran
+B.Tech Artificial Intelligence & Data Science Student
+
+🔗 LinkedIn:
+https://www.linkedin.com/in/sabari-sekaran-mu-9238032a3/
