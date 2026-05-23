@@ -1,0 +1,34 @@
+# Configuration file for Leaf Disease Image Captioning ML
+
+# Model Configuration
+model:
+  name: "your_pretrained_plant_disease_model"
+  type: "image_classification"
+  checkpoint: "models/trained/best_model.pt"
+
+# Data Configuration
+data:
+  raw_path: "data/raw"
+  processed_path: "data/processed"
+  train_split: 0.8
+  val_split: 0.1
+  test_split: 0.1
+
+# Training Configuration
+training:
+  batch_size: 32
+  learning_rate: 0.0001
+  epochs: 100
+  device: "cuda"  # or "cpu"
+  
+# Image Configuration
+image:
+  size: 224
+  channels: 3
+  normalize: true
+  
+# Paths
+paths:
+  results: "results/"
+  logs: "logs/"
+  models: "models/trained/"
